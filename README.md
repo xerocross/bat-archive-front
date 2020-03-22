@@ -1,3 +1,45 @@
+# bat-archive-front
+
+This is a frontend interface (written in React) for the
+batman-archive program.  The frontend and backend are loosely 
+coupled.  They will only communicate by way of messages sent
+over the open API.
+
+See the batman-archive project to understand its functions and API.
+The frontend is still under construction, but in general terms it
+will do the following:
+
+* allow user to log into the batman-archive backend
+* allow user to post new data to the archive
+* allow user to query archive and view the list of data returned
+from the archive
+* allow user to edit archive elements
+
+Note: in truth, the user cannot "edit" an archive element because
+these elements are immutable.  Instead, he can create a new revision
+which will be added to the archive, and the backend will take care of
+organizing the revisions.
+
+In the future, it may be useful to allow the user to browse previous
+revisions of a given archive element.  That is not a high priority 
+at this time.
+
+Top priority goals for the moment are login, post, and query.
+
+## Archive Element Schema
+An archive element has the following schema:
+
+Number id
+Number masterId
+String username
+String textData
+List<String> tags
+String postDate
+String hash
+String previousHash
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
